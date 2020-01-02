@@ -1,17 +1,44 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  },
+  links: {
+    fontSize: 20,
+    margin: "5px 5px 5px 5px",
+    color: "white"
+  }
+}));
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
-    <Typography color="primary.main">
-      <Link style={{ marginRight: 50 }} color="primary" underline="hover">
-        Home
-      </Link>
-      <Link style={{ marginRight: 50 }} color="primary" underline="hover">
-        About
-      </Link>
-    </Typography>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            <Link className={classes.links} underline="hover">
+              Home
+            </Link>
+            <Link className={classes.links} underline="hover">
+              About
+            </Link>
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 

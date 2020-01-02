@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Container maxWidth="xl">
       <Navbar />
-      <Container maxWidth="lg"></Container>
+      <Container maxWidth="lg">MAIN SITE</Container>
     </Container>
   );
 }

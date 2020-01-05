@@ -19,6 +19,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// vantar history push
+// Home == landing
+// About ==  about the project, etc
+
 const Navbar = () => {
   const classes = useStyles();
   return (

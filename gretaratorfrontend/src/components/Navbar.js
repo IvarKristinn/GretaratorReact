@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
+import { history } from "../helpers";
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -30,10 +32,18 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link className={classes.links} underline="hover">
+            <Link
+              className={classes.links}
+              underline="hover"
+              onClick={() => history.push("/")}
+            >
               Home
             </Link>
-            <Link className={classes.links} underline="hover">
+            <Link
+              className={classes.links}
+              underline="hover"
+              onClick={() => history.push("/about")}
+            >
               About
             </Link>
           </Typography>

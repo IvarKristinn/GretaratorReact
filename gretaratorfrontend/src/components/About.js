@@ -74,6 +74,7 @@ const About = () => {
           way, he draws the best out of us. <br />
           <br />
           Thanks for everything. <br />
+          Arna Björg, Guðrún Margrét, <br />
           Hjörtur Jóhann and Ívar Kristinn.
           <br />
           Here you can find the link to Gretarator Open Api

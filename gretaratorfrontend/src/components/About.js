@@ -19,7 +19,7 @@ const About = () => {
         backgroundColor: "#63788a"
       }}
     >
-      <h1>About Gretarator</h1>
+      <h1>About Gretarator Project</h1>
       <p>
         This project is an love poem to our friend Grétar Örn <br />
       </p>

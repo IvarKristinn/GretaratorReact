@@ -42,7 +42,7 @@ class Landing extends React.Component {
     let orgNick = { nickname: "Grétar", description: "OG" };
     let randomNick = this.state.ranNick;
     //console.log(randomNick);
-    if (this.state.clicked == false) {
+    if (this.state.clicked === false) {
       //console.log("USER HAS NOT CLICKED");
       return [
         <div

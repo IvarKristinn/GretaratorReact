@@ -7,7 +7,8 @@ import gretarator from "../apis/gretarnator";
 const useStyles = theme => ({
   root: {
     flexGrow: 1,
-    height: "800px"
+    height: "800px",
+    backgroundColor: "#63788a"
   }
 });
 
@@ -44,11 +45,11 @@ class Landing extends React.Component {
         <div
           style={{
             textAlign: "center",
-            fontSize: "35px",
+            fontSize: "50px",
             marginTop: "10px",
             marginBottom: "10px",
             minHeight: "50px",
-            maxHeight: "50px",
+            maxHeight: "60px",
             display: "block",
             overflow: "hidden"
           }}
@@ -75,11 +76,11 @@ class Landing extends React.Component {
         <div
           style={{
             textAlign: "center",
-            fontSize: "35px",
+            fontSize: "50px",
             marginTop: "10px",
             marginBottom: "10px",
             minHeight: "50px",
-            maxHeight: "50px",
+            maxHeight: "60px",
             display: "block",
             overflow: "hidden"
           }}
@@ -107,7 +108,15 @@ class Landing extends React.Component {
   render() {
     const classes = this.props;
     return (
-      <div className={classes.root}>
+      <div
+        className={classes.root}
+        style={{
+          textAlign: "center",
+          marginTop: "25px",
+          backgroundColor: "#63788a",
+          height: "800px"
+        }}
+      >
         {this.renderNick()}
         <div
           style={{

@@ -29,7 +29,6 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 500
   }
 }));
-// About the project, needs maybe smaller container
 const About = () => {
   const classes = useStyles();
   return (

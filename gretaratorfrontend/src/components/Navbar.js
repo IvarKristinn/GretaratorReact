@@ -25,12 +25,14 @@ const useStyles = makeStyles(theme => ({
 
 const Navbar = () => {
   const classes = useStyles();
+  const noPointer = { cursor: "default" };
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link
+              style={noPointer}
               className={classes.links}
               underline="hover"
               onClick={() => history.push("/")}
@@ -38,6 +40,7 @@ const Navbar = () => {
               Home
             </Link>
             <Link
+              style={noPointer}
               className={classes.links}
               underline="hover"
               onClick={() => history.push("/about")}

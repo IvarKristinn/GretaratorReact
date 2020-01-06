@@ -45,14 +45,50 @@ class Landing extends React.Component {
     if (this.state.clicked == false) {
       //console.log("USER HAS NOT CLICKED");
       return [
-        <div style={{ textAlign: "center" }}>{orgNick.nickname}</div>,
-        <div style={{ textAlign: "center" }}>{orgNick.description}</div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "35px",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        >
+          {orgNick.nickname}
+        </div>,
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "35px",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        >
+          {orgNick.description}
+        </div>
       ];
     } else {
       //console.log("RANDOM");
       return [
-        <div style={{ textAlign: "center" }}>{randomNick.nickname}</div>,
-        <div style={{ textAlign: "center" }}>{randomNick.description}</div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "35px",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        >
+          {randomNick.nickname}
+        </div>,
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "35px",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        >
+          {randomNick.description}
+        </div>
       ];
     }
   }
@@ -65,10 +101,17 @@ class Landing extends React.Component {
     return (
       <div className={classes.root}>
         {this.renderNick()}
-        <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "25px",
+            marginBottom: "25px"
+          }}
+        >
           <Button
             variant="contained"
             color="primary"
+            size="large"
             onClick={() => {
               this.buttonClick();
               this.renderNick();

@@ -73,8 +73,8 @@ const About = () => {
           He is like a sunlight in a dark world. He is a leader, he shows us the
           way, he draws the best out of us. <br />
           <br />
-          thanks for everything <br />
-          Hjörtur Jóhann and Ívar Kristinn
+          Thanks for everything. <br />
+          Hjörtur Jóhann and Ívar Kristinn.
           <br />
           Here you can find the link to Gretarator Open Api
           <IconButton

@@ -4,6 +4,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import CopyrightIcon from "@material-ui/icons/Copyright";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 import { history } from "../helpers";
 
@@ -43,6 +45,9 @@ const Navbar = () => {
               About
             </Link>
           </Typography>
+          <SvgIcon>
+            <CopyrightIcon />
+          </SvgIcon>
         </Toolbar>
       </AppBar>
     </div>

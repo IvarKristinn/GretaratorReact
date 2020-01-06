@@ -25,11 +25,9 @@ class Landing extends React.Component {
   };
 
   onNewNick() {
-    //console.log("NEWNICK");
     let nick = this.state.nicknames[
       Math.floor(Math.random() * this.state.nicknames.length)
     ];
-    //console.log(nick.nickname);
     // setState with the new random nick
     this.setState({ ranNick: nick });
   }
@@ -41,9 +39,7 @@ class Landing extends React.Component {
   renderNick() {
     let orgNick = { nickname: "Grétar", description: "OG" };
     let randomNick = this.state.ranNick;
-    //console.log(randomNick);
     if (this.state.clicked === false) {
-      //console.log("USER HAS NOT CLICKED");
       return [
         <div
           style={{
@@ -67,7 +63,6 @@ class Landing extends React.Component {
         </div>
       ];
     } else {
-      //console.log("RANDOM");
       return [
         <div
           style={{
@@ -92,12 +87,9 @@ class Landing extends React.Component {
       ];
     }
   }
-  //this.onNewNick.nick.nickname
-  //var newNick = this.onNewNick();
+
   render() {
     const classes = this.props;
-    //console.log(this.onNewNick.nick);
-
     return (
       <div className={classes.root}>
         {this.renderNick()}

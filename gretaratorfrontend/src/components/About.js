@@ -15,10 +15,11 @@ const About = () => {
       className={classes.root}
       style={{
         textAlign: "center",
-        marginTop: "25px"
+        marginTop: "25px",
+        backgroundColor: "#63788a"
       }}
     >
-      <h2>About Gretarator</h2>
+      <h1>About Gretarator</h1>
       <p>
         This project is an love poem to our friend Grétar Örn <br />
       </p>

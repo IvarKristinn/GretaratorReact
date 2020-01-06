@@ -46,7 +46,11 @@ class Landing extends React.Component {
             textAlign: "center",
             fontSize: "35px",
             marginTop: "10px",
-            marginBottom: "10px"
+            marginBottom: "10px",
+            minHeight: "50px",
+            maxHeight: "50px",
+            display: "block",
+            overflow: "hidden"
           }}
         >
           {orgNick.nickname}
@@ -56,7 +60,11 @@ class Landing extends React.Component {
             textAlign: "center",
             fontSize: "35px",
             marginTop: "10px",
-            marginBottom: "10px"
+            marginBottom: "10px",
+            minHeight: "50px",
+            maxHeight: "50px",
+            display: "block",
+            overflow: "hidden"
           }}
         >
           {orgNick.description}
@@ -69,7 +77,11 @@ class Landing extends React.Component {
             textAlign: "center",
             fontSize: "35px",
             marginTop: "10px",
-            marginBottom: "10px"
+            marginBottom: "10px",
+            minHeight: "50px",
+            maxHeight: "50px",
+            display: "block",
+            overflow: "hidden"
           }}
         >
           {randomNick.nickname}
@@ -79,7 +91,11 @@ class Landing extends React.Component {
             textAlign: "center",
             fontSize: "35px",
             marginTop: "10px",
-            marginBottom: "10px"
+            marginBottom: "10px",
+            minHeight: "50px",
+            maxHeight: "50px",
+            display: "block",
+            overflow: "hidden"
           }}
         >
           {randomNick.description}

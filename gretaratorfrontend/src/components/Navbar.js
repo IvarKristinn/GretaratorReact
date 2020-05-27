@@ -47,6 +47,14 @@ const Navbar = () => {
             >
               About
             </Link>
+            <Link
+              style={noPointer}
+              className={classes.links}
+              underline="hover"
+              onClick={() => history.push("/nicknames")}
+            >
+              Nicknames
+            </Link>
           </Typography>
           <SvgIcon>
             <CopyrightIcon />

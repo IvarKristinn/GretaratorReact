@@ -2,8 +2,19 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
 
 import gretarator from "../apis/gretarnator";
+
+/*
+The Forms render, but i need the user data and 
+post it too the API, so prop somekind 
+
+
+*/
+
+
 
 const useStyles = theme => ({
   root: {
@@ -31,90 +42,78 @@ class NameForm extends React.Component {
     };
   
     buttonClick() {
-      this.setState({ clicked: true });
+      //this.setState({ clicked: true });
+      console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
     }
-  
-    renderNick() {
-      let orgNick = { nickname: "Grétar", description: "OG" };
-      let randomNick = this.state.ranNick;
-      if (this.state.clicked === false) {
-        return [
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "50px",
-              marginTop: "10px",
-              marginBottom: "10px",
-              minHeight: "50px",
-              maxHeight: "60px",
-              display: "block",
-              overflow: "hidden"
-            }}
-          >
-            {orgNick.nickname}
-          </div>,
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "35px",
-              marginTop: "10px",
-              marginBottom: "10px",
-              minHeight: "50px",
-              maxHeight: "50px",
-              display: "block",
-              overflow: "hidden"
-            }}
-          >
-            {orgNick.description}
-          </div>
-        ];
-      } else {
-        return [
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "50px",
-              marginTop: "10px",
-              marginBottom: "10px",
-              minHeight: "50px",
-              maxHeight: "60px",
-              display: "block",
-              overflow: "hidden"
-            }}
-          >
-            {randomNick.nickname}
-          </div>,
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "35px",
-              marginTop: "10px",
-              marginBottom: "10px",
-              minHeight: "50px",
-              maxHeight: "50px",
-              display: "block",
-              overflow: "hidden"
-            }}
-          >
-            {randomNick.description}
-          </div>
-        ];
-      }
-    }
-  
+
     render() {
       const classes = this.props;
       return (
-        <div
-          className={classes.root}
-          style={{
-            textAlign: "center",
-            marginTop: "25px",
-            backgroundColor: "#63788a",
-            height: "800px"
-          }}
-        >
-          FORM
+      <div
+        className={classes.root}
+        style={{
+          textAlign: "center",
+          marginTop: "25px",
+          backgroundColor: "#63788a",
+          height: "800px"
+        }}
+      >
+      <form className={classes.root}>
+          <div>
+            <TextField
+              autoFocus
+              margin="normal"
+              id="nickname"
+              label="Nickname"
+              type="text"
+              style={{ margin: 10, width: "520px" }}
+              InputProps={{
+                style: {
+                  textAlign: "center"
+                }
+              }}
+              inputRef={ref => {
+                this.nickRef = ref;
+              }}
+            />
+          </div>
+          <div>
+            <TextField
+              autoFocus
+              margin="normal"
+              id="author"
+              label="Author"
+              type="text"
+              style={{ margin: 10, width: "520px" }}
+              InputProps={{
+                style: {
+                  textAlign: "center"
+                }
+              }}
+              inputRef={ref => {
+                this.authorRef = ref;
+              }}
+            />
+          </div>
+          <div>
+            <TextField
+              autoFocus
+              margin="normal"
+              id="description"
+              label="Description"
+              type="text"
+              style={{ margin: 10, width: "520px" }}
+              InputProps={{
+                style: {
+                  textAlign: "center"
+                }
+              }}
+              inputRef={ref => {
+                this.descriptionRef = ref;
+              }}
+            />
+          </div>
+        </form>
           <div
             style={{
               textAlign: "center",
@@ -127,14 +126,15 @@ class NameForm extends React.Component {
               color="primary"
               size="large"
               onClick={() => {
-                this.postNewNick();
+                //this.postNewNick();
+                this.buttonClick();
               }}
               startIcon={<CloudUploadIcon />}
             >
               Post new nick
             </Button>
           </div>
-        </div>
+          </div>
       );
     }
   }

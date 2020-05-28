@@ -29,10 +29,7 @@ class NameForm extends React.Component {
 
       console.log("inside Post")
       console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
-      const response = await gretarator.post("/api/nicknames", body, { 
-        headers: {
-        "Content-Type": "application/json"
-      }});
+      const response = await gretarator.post("/api/nicknames", body);
       console.log(response);
 
       // Clear textfield

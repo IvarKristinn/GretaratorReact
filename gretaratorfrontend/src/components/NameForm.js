@@ -31,8 +31,7 @@ class NameForm extends React.Component {
       console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
       const response = await gretarator.post("/api/nicknames", body, { 
         headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Content-Type": "application/json"
       }});
       console.log(response);
 

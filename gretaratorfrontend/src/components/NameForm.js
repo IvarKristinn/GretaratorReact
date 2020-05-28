@@ -5,11 +5,6 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import TextField from '@material-ui/core/TextField';
 import gretarator from "../apis/gretarnator";
 
-/*
-The Forms render, but i need the user data and 
-post it too the API, so prop somekind 
-*/
-
 const useStyles = theme => ({
   root: {
     flexGrow: 1,
@@ -39,11 +34,7 @@ class NameForm extends React.Component {
         this.descriptionRef.value = "";
       }, 100);
     };
-    buttonClick() {
-      console.log("VALUE READ");
-      console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
-      console.log("button clicked");
-    }
+
     render() {
       const classes = this.props;
       return (
@@ -124,7 +115,6 @@ class NameForm extends React.Component {
               color="primary"
               size="medium"
               onClick={() => {
-                this.buttonClick();
                 this.postNewNick();
               }}
               startIcon={<CloudUploadIcon />}

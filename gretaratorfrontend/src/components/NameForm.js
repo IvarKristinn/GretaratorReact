@@ -20,20 +20,30 @@ const useStyles = theme => ({
 
 class NameForm extends React.Component {
     postNewNick = async () => {
+      console.log("inside Post")
+      console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
       const response = await gretarator.post("/api/nicknames", {
           nickname: this.nickRef.value,
           author: this.authorRef.value,
           description: this.descriptionRef.value
-      });
+      }, { headers: {
+        "content-type": "application/json",
+        "access-control-allow-origin" : "*"
+      }});
       console.log(response);
+
+      // Clear textfield
+      setTimeout(() => {
+        this.nickRef.value = "";
+        this.authorRef.value = "";
+        this.descriptionRef.value = "";
+      }, 100);
     };
-  /*
     buttonClick() {
       console.log("VALUE READ");
       console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
-      console.log("button clicked")
+      console.log("button clicked");
     }
-*/
     render() {
       const classes = this.props;
       return (
@@ -114,6 +124,7 @@ class NameForm extends React.Component {
               color="primary"
               size="medium"
               onClick={() => {
+                this.buttonClick();
                 this.postNewNick();
               }}
               startIcon={<CloudUploadIcon />}

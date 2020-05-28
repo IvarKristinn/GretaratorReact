@@ -2,19 +2,13 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
-
 import gretarator from "../apis/gretarnator";
 
 /*
 The Forms render, but i need the user data and 
 post it too the API, so prop somekind 
-
-
 */
-
-
 
 const useStyles = theme => ({
   root: {
@@ -25,27 +19,21 @@ const useStyles = theme => ({
 });
 
 class NameForm extends React.Component {
-    /*state = { nicknames: [], ranNick: [], clicked: false };
-  
-    componentWillMount() {
-      this.getAllNicks();
-    }
-  */
     postNewNick = async () => {
       const response = await gretarator.post("/api/nicknames", {
-          nickname: "Test",
-          author: "Test",
-          description: "Test"
+          nickname: this.nickRef.value,
+          author: this.authorRef.value,
+          description: this.descriptionRef.value
       });
       console.log(response);
-      this.setState({ nicknames: response.data });
     };
-  
+  /*
     buttonClick() {
-      //this.setState({ clicked: true });
+      console.log("VALUE READ");
       console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
+      console.log("button clicked")
     }
-
+*/
     render() {
       const classes = this.props;
       return (
@@ -124,10 +112,9 @@ class NameForm extends React.Component {
             <Button
               variant="contained"
               color="primary"
-              size="large"
+              size="medium"
               onClick={() => {
-                //this.postNewNick();
-                this.buttonClick();
+                this.postNewNick();
               }}
               startIcon={<CloudUploadIcon />}
             >

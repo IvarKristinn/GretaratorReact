@@ -47,7 +47,7 @@ const About = () => {
           <IconButton
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
             target="facebook"
             href="http://www.facebook.com/gretarorn.hjartarson/"
           >
@@ -56,7 +56,7 @@ const About = () => {
           <IconButton
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
             target="instagram"
             href="http://www.instagram.com/gretarornhjartarson/"
           >
@@ -80,7 +80,7 @@ const About = () => {
           <IconButton
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
             target="github"
             href="http://github.com/HjorturJ/Gretarator"
           >

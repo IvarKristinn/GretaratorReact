@@ -20,15 +20,19 @@ const useStyles = theme => ({
 
 class NameForm extends React.Component {
     postNewNick = async () => {
+
+      const body = {
+        nickname: this.nickRef.value,
+        author: this.authorRef.value,
+        description: this.descriptionRef.value
+      };
+
       console.log("inside Post")
       console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
-      const response = await gretarator.post("/api/nicknames", {
-          nickname: this.nickRef.value,
-          author: this.authorRef.value,
-          description: this.descriptionRef.value
-      }, { headers: {
-        "content-type": "application/json",
-        "access-control-allow-origin" : "*"
+      const response = await gretarator.post("/api/nicknames", body, { 
+        headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       }});
       console.log(response);
 

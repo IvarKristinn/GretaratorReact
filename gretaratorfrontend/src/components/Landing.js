@@ -105,6 +105,33 @@ class Landing extends React.Component {
     }
   }
 
+  /* The random nickname button will be disabled 
+  till we have nicknames data, so the site does not crash*/
+  renderButton() {
+    if(this.state.nicknames && this.state.nicknames.length) {
+      return [
+        <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        onClick={() => {
+          this.buttonClick();
+          this.renderNick();
+          this.onNewNick();
+        }}
+      >
+        Random Nickname!
+      </Button>
+      ];
+    } else {
+      return [
+        <Button variant="contained" size="large" disabled>
+          Something went wrong!
+        </Button>
+        ];
+    }
+  }
+
   render() {
     const classes = this.props;
     return (
@@ -125,7 +152,8 @@ class Landing extends React.Component {
             marginBottom: "25px"
           }}
         >
-          <Button
+          {this.renderButton()}
+        {/*<Button
             variant="contained"
             color="primary"
             size="large"
@@ -136,7 +164,7 @@ class Landing extends React.Component {
             }}
           >
             Random Nickname!
-          </Button>
+          </Button>*/} 
         </div>
       </div>
     );

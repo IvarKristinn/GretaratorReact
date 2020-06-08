@@ -46,7 +46,14 @@ class NameForm extends React.Component {
           backgroundColor: "#63788a",
           height: "800px"
         }}
-      >
+      > 
+      <h2>Do you wanna be part of the nickname gang ?</h2>
+      <div>
+        <p style={{ fontSize: "20px" }}>
+          Look no further! Here you can be part of the Gretarator project.<br />
+          Simply fill out the form and see the magic happens.
+        </p>
+        </div>
       <form className={classes.root}>
           <div>
             <TextField

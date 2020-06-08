@@ -153,18 +153,6 @@ class Landing extends React.Component {
           }}
         >
           {this.renderButton()}
-        {/*<Button
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={() => {
-              this.buttonClick();
-              this.renderNick();
-              this.onNewNick();
-            }}
-          >
-            Random Nickname!
-          </Button>*/} 
         </div>
       </div>
     );

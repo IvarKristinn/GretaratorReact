@@ -1,5 +1,5 @@
 # Gretarator
-This README is about the frontend part of the Gretarator project. 
+This README is about the frontend part of the Gretarator project.  
 Its made with ReactJS and Material-UI.  Link to the project: [Gretarator](http://gretarator.com/)
 
 # What I Learned

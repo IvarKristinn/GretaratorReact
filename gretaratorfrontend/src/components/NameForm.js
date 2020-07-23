@@ -14,124 +14,152 @@ const useStyles = theme => ({
 });
 
 class NameForm extends React.Component {
-    postNewNick = async () => {
+  state = {
+    nickname: ""
+  };
 
-      const body = {
-        nickname: this.nickRef.value,
-        author: this.authorRef.value,
-        description: this.descriptionRef.value
-      };
+  // Nickname needed to be in state so the renderUploadButton works as it should
+  // Etc nickname is required, and user should no be able to post to the server unless its filled
+  handleChange = event => {
+    this.setState({nickname: event.target.value});
+  };
 
-      console.log("inside Post")
-      console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
-      const response = await gretarator.post("/api/nicknames", body);
-      console.log(response);
+  postNewNick = async () => {
 
-      // Clear textfield
-      setTimeout(() => {
-        this.nickRef.value = "";
-        this.authorRef.value = "";
-        this.descriptionRef.value = "";
-      }, 100);
+    const body = {
+      nickname: this.nickRef.value,
+      author: this.authorRef.value,
+      description: this.descriptionRef.value
     };
 
-    render() {
-      const classes = this.props;
-      return (
-      <div
-        className={classes.root}
-        style={{
-          textAlign: "center",
-          marginTop: "25px",
-          backgroundColor: "#63788a",
-          height: "800px"
+    console.log(this.nickRef.value, this.authorRef.value, this.descriptionRef.value);
+    const response = await gretarator.post("/api/nicknames", body);
+
+    // Clear textfield and reset state
+    setTimeout(() => {
+      this.nickRef.value = "";
+      this.authorRef.value = "";
+      this.descriptionRef.value = "";
+      this.setState({
+        nickname: ""
+      });
+    }, 100);
+  };
+
+  renderUploadButton() {
+    if(this.state.nickname) {
+      return [
+        <Button
+        variant="contained"
+        color="primary"
+        size="medium"
+        onClick={() => {
+          this.postNewNick();
         }}
-      > 
-      <h2>Do you wanna be part of the nickname gang ?</h2>
-      <div>
-        <p style={{ fontSize: "20px" }}>
-          Look no further! Here you can be part of the Gretarator project.<br />
-          Simply fill out the form and see the magic happens.
-        </p>
-        </div>
-      <form className={classes.root}>
-          <div>
-            <TextField
-              autoFocus
-              margin="normal"
-              id="nickname"
-              label="Nickname"
-              type="text"
-              style={{ margin: 10, width: "520px" }}
-              InputProps={{
-                style: {
-                  textAlign: "center"
-                }
-              }}
-              inputRef={ref => {
-                this.nickRef = ref;
-              }}
-            />
-          </div>
-          <div>
-            <TextField
-              autoFocus
-              margin="normal"
-              id="author"
-              label="Author"
-              type="text"
-              style={{ margin: 10, width: "520px" }}
-              InputProps={{
-                style: {
-                  textAlign: "center"
-                }
-              }}
-              inputRef={ref => {
-                this.authorRef = ref;
-              }}
-            />
-          </div>
-          <div>
-            <TextField
-              autoFocus
-              margin="normal"
-              id="description"
-              label="Description"
-              type="text"
-              style={{ margin: 10, width: "520px" }}
-              InputProps={{
-                style: {
-                  textAlign: "center"
-                }
-              }}
-              inputRef={ref => {
-                this.descriptionRef = ref;
-              }}
-            />
-          </div>
-        </form>
-          <div
-            style={{
-              textAlign: "center",
-              marginTop: "25px",
-              marginBottom: "25px"
-            }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              size="medium"
-              onClick={() => {
-                this.postNewNick();
-              }}
-              startIcon={<CloudUploadIcon />}
-            >
-              Post new nick
-            </Button>
-          </div>
-          </div>
-      );
+        startIcon={<CloudUploadIcon />}
+      >
+        Post new nick
+      </Button>
+      ];
+    } else {
+      return [
+        <Button variant="contained" size="large" disabled>
+          Nickname is required
+        </Button>
+        ];
     }
   }
+
+  render() {
+    const classes = this.props;
+    return (
+    <div
+      className={classes.root}
+      style={{
+        textAlign: "center",
+        marginTop: "25px",
+        backgroundColor: "#63788a",
+        height: "800px"
+      }}
+    > 
+    <h2>Do you wanna be part of the nickname gang ?</h2>
+    <div>
+      <p style={{ fontSize: "20px" }}>
+        Look no further! Here you can be part of the Gretarator project. <br />
+        Simply fill out the form and watch the magic happen. <br />
+        P.S. the Nickname field is required, rest is optional.
+      </p>
+      </div>
+    <form className={classes.root}>
+      <div>
+        <TextField
+            value = {this.state.nickname}
+            autoFocus
+            margin="normal"
+            id="nickname"
+            label="Nickname"
+            type="text"
+            style={{ margin: 10, width: "520px" }}
+            InputProps={{
+              style: {
+                textAlign: "center"
+              }
+            }}
+            inputRef={ref => {
+              this.nickRef = ref;
+            }}
+            onChange={this.handleChange}
+          />
+      </div>
+      <div>
+          <TextField
+            autoFocus
+            margin="normal"
+            id="author"
+            label="Author"
+            type="text"
+            style={{ margin: 10, width: "520px" }}
+            InputProps={{
+              style: {
+                textAlign: "center"
+              }
+            }}
+            inputRef={ref => {
+              this.authorRef = ref;
+            }}
+          />
+      </div>
+      <div>
+          <TextField
+            autoFocus
+            margin="normal"
+            id="description"
+            label="Description"
+            type="text"
+            style={{ margin: 10, width: "520px" }}
+            InputProps={{
+              style: {
+                textAlign: "center"
+              }
+            }}
+            inputRef={ref => {
+              this.descriptionRef = ref;
+            }}
+          />
+      </div>
+    </form>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "25px",
+            marginBottom: "25px"
+          }}
+        >
+          {this.renderUploadButton()}
+        </div>
+      </div>
+    );
+  }
+}
   
   export default withStyles(useStyles)(NameForm);

@@ -4,7 +4,7 @@ Its made with ReactJS and Material-UI.  Link to the project: [Gretarator](http:/
 
 # What I Learned
 * Using Material-UI with ReactJS
-* Use Axios to call Open API and parse data
+* Use Axios to call API
 * Update UI with API data
 
 ## Other

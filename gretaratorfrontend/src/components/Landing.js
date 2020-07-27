@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import gretarator from "../apis/gretarnator";
 
@@ -105,6 +106,9 @@ class Landing extends React.Component {
     }
   }
 
+  /*<Button variant="contained" size="large" disabled>
+  Something went wrong!
+  </Button> */
   /* The random nickname button will be disabled 
   till we have nicknames data, so the site does not crash*/
   renderButton() {
@@ -125,9 +129,7 @@ class Landing extends React.Component {
       ];
     } else {
       return [
-        <Button variant="contained" size="large" disabled>
-          Something went wrong!
-        </Button>
+        <CircularProgress color="primary" />
         ];
     }
   }

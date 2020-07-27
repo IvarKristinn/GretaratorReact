@@ -106,9 +106,6 @@ class Landing extends React.Component {
     }
   }
 
-  /*<Button variant="contained" size="large" disabled>
-  Something went wrong!
-  </Button> */
   /* The random nickname button will be disabled 
   till we have nicknames data, so the site does not crash*/
   renderButton() {

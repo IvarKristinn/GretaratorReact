@@ -16,15 +16,11 @@ const useStyles = theme => ({
 class Landing extends React.Component {
   state = { nicknames: [], ranNick: [], clicked: false };
 
-  componentWillMount() {
-    this.getAllNicks();
-  }
-
-  getAllNicks = async () => {
+  async componentDidMount() {
     const response = await gretarator.get("/api/nicknames");
     console.log(response);
     this.setState({ nicknames: response.data });
-  };
+  }
 
   onNewNick() {
     let nick = this.state.nicknames[

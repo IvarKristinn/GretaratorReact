@@ -73,8 +73,7 @@ const About = () => {
           way, he draws the best out of us. <br />
           <br />
           Thanks for everything. <br />
-          Arna Björg, Guðrún Margrét, <br />
-          Hjörtur Jóhann and Ívar Kristinn.
+          Arna Björg, Guðrún Margrét, Hjörtur Jóhann, Ívar Kristinn.
           <br />
           Here you can find the link to Gretarator Open Api
           <IconButton
@@ -90,7 +89,7 @@ const About = () => {
       </div>
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={3}>
+          {/* <Grid item xs={3}>
             <Paper className={classes.paper}>
               <img className={classes.img} src={pic1} alt="gretar1" />
             </Paper>
@@ -109,7 +108,7 @@ const About = () => {
             <Paper className={classes.paper}>
               <img className={classes.img} src={pic4} alt="gretar4" />
             </Paper>
-          </Grid>
+          </Grid> */}
         </Grid>
       </div>
     </div>

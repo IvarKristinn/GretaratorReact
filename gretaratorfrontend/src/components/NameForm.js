@@ -113,7 +113,6 @@ class NameForm extends React.Component {
       </div>
       <div>
           <TextField
-            autoFocus
             margin="normal"
             id="author"
             label="Author"
@@ -131,7 +130,6 @@ class NameForm extends React.Component {
       </div>
       <div>
           <TextField
-            autoFocus
             margin="normal"
             id="description"
             label="Description"
